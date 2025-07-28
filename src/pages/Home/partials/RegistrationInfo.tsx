@@ -15,7 +15,7 @@ const RegistrationInfo = ({
   yourRole,
   industry,
   experienceInYears,
-  aboutUs = '-',
+  aboutUs,
 }: RegistrationFields) => {
   return (
     <Container maxWidth="sm" sx={{ mt: 6 }}>
@@ -49,7 +49,7 @@ const RegistrationInfo = ({
             <Divider />
 
             <ListItem>
-              <ListItemText primary="About You" secondary={aboutUs} />
+              <ListItemText primary="About You" secondary={aboutUs || 'N/A'} />
             </ListItem>
           </List>
         </CardContent>

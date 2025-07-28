@@ -1,10 +1,13 @@
 import { Box, Button, Container, Stack, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { useRegistrationStore } from '../../../store/registrationStore';
 
 const LandingContent = () => {
   const navigate = useNavigate();
+  const { reset } = useRegistrationStore();
 
   const handleStart = () => {
+    reset();
     navigate('/registration');
   };
 
