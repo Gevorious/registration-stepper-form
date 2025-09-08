@@ -16,8 +16,9 @@ const StepOne = ({ onNext }: StepProps) => {
     register,
     handleSubmit,
     watch,
+    trigger,
     formState: { errors },
-  } = useForm<StepOneFormValues>();
+  } = useForm<StepOneFormValues>({ mode: 'onBlur' });
 
   const passValue = watch('password');
 
@@ -59,6 +60,7 @@ const StepOne = ({ onNext }: StepProps) => {
         })}
         error={!!errors.password}
         helperText={errors.password?.message}
+        onBlur={() => trigger('confirmPassword')}
       />
       <TextField
         label="Confirm Password"
@@ -72,6 +74,7 @@ const StepOne = ({ onNext }: StepProps) => {
         })}
         error={!!errors.confirmPassword}
         helperText={errors.confirmPassword?.message}
+        onBlur={() => trigger('confirmPassword')}
       />
     </StepperForm>
   );

@@ -1,0 +1,11 @@
+.MuiFormControl-root {
+  position: relative;
+}
+
+.MuiFormHelperText-root.Mui-error {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  margin-left: 0;
+  font-style: italic;
+}

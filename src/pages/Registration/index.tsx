@@ -11,6 +11,7 @@ import {
 import StepOne from './partials/steps/StepOne';
 import StepTwo from './partials/steps/StepTwo';
 import StepThree from './partials/steps/StepThree';
+import './styles.css';
 
 const steps = ['Personal Info', 'Account Details', 'Confirmation'];
 
@@ -29,10 +30,8 @@ const RegistrationFlow = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Map current path to step index
   const currentStep = stepPaths.indexOf(location.pathname);
 
-  // Redirect if user tries to access steps out of order
   useEffect(() => {
     if (currentStep === -1) {
       navigate('/registration/step-1', { replace: true });
